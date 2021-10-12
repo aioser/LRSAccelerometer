@@ -1,0 +1,6 @@
+framework module Pods_LRSAccelerometer_Example {
+  umbrella header "Pods-LRSAccelerometer_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

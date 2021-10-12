@@ -7,12 +7,17 @@
 //
 
 #import "LRSAppDelegate.h"
+#import <LRSAccelerometer/LRSAccelerometer.h>
 
 @implementation LRSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[LRSAccelerometer instance] startAccelerometerWithHandler:^(LRSAccelerometer * _Nonnull handler) {
+        NSLog(@"shaked");
+        [handler stop];
+    }];
     return YES;
 }
 
