@@ -7,6 +7,7 @@
 //
 
 #import "LRSViewController.h"
+@import LRSAccelerometer;
 
 @interface LRSViewController ()
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [LRSAccelerometer.instance startAccelerometerWithHandler:^(LRSAccelerometer * _Nonnull handler) {
+        NSLog(@"shark");
+        [handler stop];
+    }];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
